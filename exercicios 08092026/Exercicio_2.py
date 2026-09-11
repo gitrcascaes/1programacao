@@ -1,24 +1,15 @@
-from datetime import datetime
+# Consulta de produtos em estoque (ficticio)
 print()
-print(f"\033[31;43mCONTROLE DE ESTOQUE\033[0m");
 print()
-
-Produto = input("Digite o nome do produto: ")
-
-Estoque = input (print "xxxxxxxxxxxxx: ")
-if Estoque == "0":
-    Outros = input("Para Outros, descreva seu problema com mais detalhes:");
-print ()
-print ()
-data_atual = datetime.now().strftime("%d/%m/%Y %H:%M")
-
-
-print()
-if Estoque == "1":
-   print ("\031[033mPRIORIDADE CRÍTICA!\031[0m")
-elif Estoque == "2":
-     print ("\031[033;035mPRIORIDADE ALTA!\031[0m")
-elif Estoque =="3":
-     print ("\033[031;035mPrioridade Média!\033[0m")
+produto = input ("Nome do produto:")
+quantidade = int(input("Quantidade disponível:"))
+if quantidade == 0:
+   status = print ("Estoque zerado")
+elif 1 <= quantidade <=5:
+   status = print("Estoque crítico")
+elif 6 <= quantidade <=20:
+   status = print ("Estoque baixo")
 else:
-    print("\035[031;037mPrioridade baixa!\035[0m")   
+   status = print ("Estoque Normal!")
+print()
+print()
